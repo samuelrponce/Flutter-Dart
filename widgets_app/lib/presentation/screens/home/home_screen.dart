@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget{
       appBar: AppBar(
         title: const Text('Flutter + Material 3'),
       ),
-      body: _HomeView(),
+      body: const _HomeView(),
     );
   }
 }
@@ -51,7 +51,13 @@ class _CustomListTitle extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
       onTap: () {
-
+      /*  Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const ButtonsScreen(),
+          ),
+        ); */
+      Navigator.pushNamed(context, menuItem.link);
+      
       },
     );
   }
