@@ -62,7 +62,7 @@ class SnackbarScreen extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton.extended(
           icon: const Icon(Icons.remove_red_eye_outlined),
-          label: Text('Mostrar Snackbar'),
+          label: const Text('Mostrar Snackbar'),
           onPressed: () => showCustomSnackbar(context),
         ));
   }
