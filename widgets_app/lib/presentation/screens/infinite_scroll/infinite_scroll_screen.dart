@@ -22,11 +22,11 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
         child: ListView.builder(
             itemCount: imagesIds.length,
             itemBuilder: (context, index) {
-              return FadeInImage(
+              return const FadeInImage(
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: 300,
-                placeholder: const AssetImage('assets/images/jar-loading.gif'),
+                placeholder: AssetImage('assets/images/jar-loading.gif'),
                 image: AssetImage('assets/images/4.jpg'),
               );
             }),
