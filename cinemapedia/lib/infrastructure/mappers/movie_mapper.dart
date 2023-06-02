@@ -6,7 +6,7 @@ class MovieMapper {
       adult: moviedb.adult,
       backdropPath: (moviedb.backdropPath != '')
           ? 'https://image.tmdb.org/t/p/w500${moviedb.backdropPath}'
-          : 'https://th.bing.com/th/id/R.953dd785698f1ba1bbb1c42cfafa850b?rik=UDfgtBknLPLyTw&riu=http%3a%2f%2fwww.natun-barta.com%2fimages%2fpage-not-found.png&ehk=jtQ%2b8GJnjgujG6Waf0cqg1dMC0O%2fnfwPtvCv75Hro6Q%3d&risl=&pid=ImgRaw&r=0',
+          : 'https://sd.keepcalms.com/i-w600/keep-calm-poster-not-found.jpg',
       genreIds: moviedb.genreIds.map((e) => e.toString()).toList(),
       id: moviedb.id,
       originalLanguage: moviedb.originalLanguage,

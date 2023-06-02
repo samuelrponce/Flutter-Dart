@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final nowPlayingMoviesProvider =
     StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
   final fetchMoreMovies = ref.watch(movieRepositoryProvider).getNowPlaying;
+
   return MoviesNotifier(fetchMoreMovies: fetchMoreMovies);
 });
 
@@ -14,7 +15,9 @@ class MoviesNotifier extends StateNotifier<List<Movie>> {
   int currentPage = 0;
   MovieCallback fetchMoreMovies;
 
-  MoviesNotifier({required this.fetchMoreMovies}) : super([]);
+  MoviesNotifier({
+    required this.fetchMoreMovies,
+  }) : super([]);
 
   Future<void> loadNextPage() async {
     currentPage++;
