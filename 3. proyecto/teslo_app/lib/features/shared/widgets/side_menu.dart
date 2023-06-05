@@ -18,6 +18,7 @@ class _SideMenuState extends State<SideMenu> {
     final hasNotch = MediaQuery.of(context).viewPadding.top > 35;
     final textStyles = Theme.of(context).textTheme;
 
+    //Barra lateral de navegacion
     return NavigationDrawer(
         elevation: 1,
         selectedIndex: navDrawerIndex,
@@ -53,7 +54,10 @@ class _SideMenuState extends State<SideMenu> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CustomFilledButton(onPressed: () {}, text: 'Cerrar sesión'),
+            child: CustomFilledButton(
+                icon: Icon(Icons.login),
+                onPressed: () {},
+                text: 'Cerrar sesión'),
           ),
         ]);
   }

@@ -2,107 +2,179 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:teslo_shop/features/shared/shared.dart';
 
-
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    return  Scaffold(
+        backgroundColor: Color(0xFFfbfcfd),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(80.0),
+          child: SafeArea(
+            child: Padding(
+                 padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: AppBar(
+            title: Text('Mi aplicación'),
+            // Resto de las propiedades del AppBar
+          ),
+        ),
+          ),
+        ),
+        body: _ButtonsHomeView());
+  }
+}
 
-    final size = MediaQuery.of(context).size;
-    final scaffoldBackgroundColor = Theme.of(context).scaffoldBackgroundColor;
+class _AppBarView extends StatelessWidget {
+  const _AppBarView();
 
-    return GestureDetector(
-      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-      child: Scaffold(
-        body: GeometricalBackground( 
-          child: SingleChildScrollView(
-            physics: const ClampingScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox( height: 80 ),
-                // Icon Banner
-                const Icon( 
-                  Icons.production_quantity_limits_rounded, 
-                  color: Colors.white,
-                  size: 100,
-                ),
-                const SizedBox( height: 80 ),
-    
-                Container(
-                  height: size.height - 260, // 80 los dos sizebox y 100 el ícono
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: scaffoldBackgroundColor,
-                    borderRadius: const BorderRadius.only(topLeft: Radius.circular(100)),
-                  ),
-                  child: const _LoginForm(),
-                )
-              ],
-            ),
-          )
-        )
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: const Color(0xFFfefafa),
+      toolbarHeight: 110,
+      title: const Center(
+        child: Icon(
+          Icons.science_outlined,
+          size: 32,
+        ),
       ),
+      leading: Placeholder(),/* IconButton(
+        padding: const EdgeInsets.only(top: 10.0, bottom: 16.0),
+        color: const Color(0xFFb4b7b8),
+        iconSize: 50,
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () {},
+        splashColor: const Color(0xFF535555),
+      ), */
+      actions: [
+        IconButton(
+          padding: const EdgeInsets.only(top: 10.0, bottom: 16.0),
+          splashColor: const Color(0xFF535555),
+          color: const Color(0xFFb4b7b8),
+          iconSize: 60,
+          icon: const Icon(Icons.home),
+          onPressed: () {},
+        ),
+      ],
     );
   }
 }
 
-class _LoginForm extends StatelessWidget {
-  const _LoginForm();
+class _ButtonsHomeView extends StatelessWidget {
+  const _ButtonsHomeView();
 
   @override
   Widget build(BuildContext context) {
-
-    final textStyles = Theme.of(context).textTheme;
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 50),
-      child: Column(
+      child: ListView(
         children: [
-          const SizedBox( height: 50 ),
-          Text('Login', style: textStyles.titleLarge ),
-          const SizedBox( height: 90 ),
-
-          const CustomTextFormField(
-            label: 'Correo',
-            keyboardType: TextInputType.emailAddress,
-          ),
-          const SizedBox( height: 30 ),
-
-          const CustomTextFormField(
-            label: 'Contraseña',
-            obscureText: true,
-          ),
-    
-          const SizedBox( height: 30 ),
-
+          const SizedBox(height: 60),
           SizedBox(
-            width: double.infinity,
-            height: 60,
-            child: CustomFilledButton(
-              text: 'Ingresar',
-              buttonColor: Colors.black,
-              onPressed: (){
-
-              },
-            )
-          ),
-
-          const Spacer( flex: 2 ),
-
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.car_rental_sharp),
+                text: 'Est elit anim irure sit ut eiusmod mollit consequat .',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const SizedBox(height: 30),
+          SizedBox(
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.login),
+                text: 'Ingresar',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const SizedBox(height: 30),
+          SizedBox(
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.login),
+                text: 'Ingresar',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const SizedBox(height: 30),
+          SizedBox(
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.login),
+                text: 'Ingresar',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const SizedBox(height: 30),
+          SizedBox(
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.login),
+                text: 'Ingresar',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const SizedBox(height: 30),
+          SizedBox(
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.login),
+                text: 'Ingresar',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const SizedBox(height: 30),
+          SizedBox(
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.login),
+                text: 'Ingresar',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const SizedBox(height: 30),
+          SizedBox(
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.login),
+                text: 'Ingresar',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const SizedBox(height: 30),
+          SizedBox(
+              width: double.infinity,
+              height: 85,
+              child: CustomFilledButton(
+                icon: const Icon(Icons.login),
+                text: 'Ingresar',
+                buttonColor: const Color(0xFFfefafa),
+                onPressed: () {},
+              )),
+          const Spacer(flex: 2),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('¿No tienes cuenta?'),
               TextButton(
-                onPressed: ()=> context.push('/register'), 
-                child: const Text('Crea una aquí')
-              )
+                  onPressed: () => context.push('/register'),
+                  child: const Text('Crea una aquí'))
             ],
           ),
-
-          const Spacer( flex: 1),
+          const Spacer(flex: 1),
         ],
       ),
     );
