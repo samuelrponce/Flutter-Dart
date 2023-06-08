@@ -7,25 +7,25 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        backgroundColor: Color(0xFFfbfcfd),
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.0),
-          child: SafeArea(
-            child: Padding(
-                 padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: AppBar(
-            title: Text('Mi aplicación'),
-            // Resto de las propiedades del AppBar
-          ),
-        ),
+    return Scaffold(
+      backgroundColor: const Color(0xFFfbfcfd),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(120.0),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              elevation: 10,
+              child: const _AppBarView(),
+            ),
           ),
         ),
-        body: _ButtonsHomeView());
+      ),
+      body: const _ButtonsHomeView(),
+    );
   }
 }
 
@@ -43,17 +43,17 @@ class _AppBarView extends StatelessWidget {
           size: 32,
         ),
       ),
-      leading: Placeholder(),/* IconButton(
-        padding: const EdgeInsets.only(top: 10.0, bottom: 16.0),
+      leading: IconButton(
+        padding: const EdgeInsets.only(top: 7.0, bottom: 16.0),
         color: const Color(0xFFb4b7b8),
         iconSize: 50,
         icon: const Icon(Icons.arrow_back),
         onPressed: () {},
         splashColor: const Color(0xFF535555),
-      ), */
+      ),
       actions: [
         IconButton(
-          padding: const EdgeInsets.only(top: 10.0, bottom: 16.0),
+          padding: const EdgeInsets.only(top: 7.0, bottom: 16.0),
           splashColor: const Color(0xFF535555),
           color: const Color(0xFFb4b7b8),
           iconSize: 60,
@@ -76,14 +76,30 @@ class _ButtonsHomeView extends StatelessWidget {
         children: [
           const SizedBox(height: 60),
           SizedBox(
-              width: double.infinity,
-              height: 85,
+            width: double.infinity,
+            height: 85,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xFFfefafa),
+                borderRadius: BorderRadius.circular(10.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 3,
+                    offset: Offset(10,
+                        5), // Cambia la posición de la sombra según tus preferencias
+                  ),
+                ],
+              ),
               child: CustomFilledButton(
-                icon: const Icon(Icons.car_rental_sharp),
-                text: 'Est elit anim irure sit ut eiusmod mollit consequat .',
-                buttonColor: const Color(0xFFfefafa),
+                icon: Icon(Icons.car_rental_sharp),
+                text: 'Est elit anim irure sit ut eiusmod mollit consequat.',
+                buttonColor: Color(0xFFfefafa),
                 onPressed: () {},
-              )),
+              ),
+            ),
+          ),
           const SizedBox(height: 30),
           SizedBox(
               width: double.infinity,
