@@ -8,23 +8,36 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFfbfcfd),
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(120.0),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+        backgroundColor: const Color(0xFFfbfcfd),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(120.0),
+          child: SafeArea(
+            child: Padding(
+              padding:
+                  const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                elevation: 10,
+                child: const _AppBarView(),
               ),
-              elevation: 10,
-              child: const _AppBarView(),
             ),
           ),
         ),
+        body: _buttonsView());
+  }
+}
+
+// ignore: camel_case_types
+class _buttonsView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
+        children: [Expanded(child: Placeholder(child: _ButtonsHomeView()))],
       ),
-      body: const _ButtonsHomeView(),
     );
   }
 }
