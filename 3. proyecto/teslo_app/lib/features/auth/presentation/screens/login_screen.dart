@@ -20,7 +20,9 @@ class LoginScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 elevation: 10,
-                child: const _AppBarView(),
+                child: const _AppBarView(
+                  imageUrl: 'assets/images/logo.png',
+                ),
               ),
             ),
           ),
@@ -34,8 +36,8 @@ class _buttonsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: const Column(
         children: [Expanded(child: Placeholder(child: _ButtonsHomeView()))],
       ),
     );
@@ -43,19 +45,20 @@ class _buttonsView extends StatelessWidget {
 }
 
 class _AppBarView extends StatelessWidget {
-  const _AppBarView();
+  final String imageUrl;
+
+  const _AppBarView({required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: const Color(0xFFfefafa),
       toolbarHeight: 110,
-      title: const Center(
-        child: Icon(
-          Icons.science_outlined,
-          size: 32,
-        ),
-      ),
+      title: Center(
+          child: Image(
+        image: AssetImage(imageUrl),
+        height: 9,
+      )),
       leading: IconButton(
         padding: const EdgeInsets.only(top: 7.0, bottom: 16.0),
         color: const Color(0xFFb4b7b8),
@@ -84,115 +87,22 @@ class _ButtonsHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
           const SizedBox(height: 60),
-          SizedBox(
-            width: double.infinity,
-            height: 85,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFFfefafa),
-                borderRadius: BorderRadius.circular(10.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 3,
-                    offset: Offset(10,
-                        5), // Cambia la posición de la sombra según tus preferencias
-                  ),
-                ],
-              ),
-              child: CustomFilledButton(
-                icon: Icon(Icons.car_rental_sharp),
-                text: 'Est elit anim irure sit ut eiusmod mollit consequat.',
-                buttonColor: Color(0xFFfefafa),
-                onPressed: () {},
-              ),
-            ),
-          ),
+          const _CustomButton(text: "hola", icon: Icon(Icons.home)),
           const SizedBox(height: 30),
-          SizedBox(
-              width: double.infinity,
-              height: 85,
-              child: CustomFilledButton(
-                icon: const Icon(Icons.login),
-                text: 'Ingresar',
-                buttonColor: const Color(0xFFfefafa),
-                onPressed: () {},
-              )),
+          const _CustomButton(text: "hola", icon: Icon(Icons.home)),
           const SizedBox(height: 30),
-          SizedBox(
-              width: double.infinity,
-              height: 85,
-              child: CustomFilledButton(
-                icon: const Icon(Icons.login),
-                text: 'Ingresar',
-                buttonColor: const Color(0xFFfefafa),
-                onPressed: () {},
-              )),
+          const _CustomButton(text: "hola", icon: Icon(Icons.home)),
           const SizedBox(height: 30),
-          SizedBox(
-              width: double.infinity,
-              height: 85,
-              child: CustomFilledButton(
-                icon: const Icon(Icons.login),
-                text: 'Ingresar',
-                buttonColor: const Color(0xFFfefafa),
-                onPressed: () {},
-              )),
+          const _CustomButton(text: "hola", icon: Icon(Icons.home)),
           const SizedBox(height: 30),
-          SizedBox(
-              width: double.infinity,
-              height: 85,
-              child: CustomFilledButton(
-                icon: const Icon(Icons.login),
-                text: 'Ingresar',
-                buttonColor: const Color(0xFFfefafa),
-                onPressed: () {},
-              )),
+          const _CustomButton(text: "hola", icon: Icon(Icons.home)),
           const SizedBox(height: 30),
-          SizedBox(
-              width: double.infinity,
-              height: 85,
-              child: CustomFilledButton(
-                icon: const Icon(Icons.login),
-                text: 'Ingresar',
-                buttonColor: const Color(0xFFfefafa),
-                onPressed: () {},
-              )),
-          const SizedBox(height: 30),
-          SizedBox(
-              width: double.infinity,
-              height: 85,
-              child: CustomFilledButton(
-                icon: const Icon(Icons.login),
-                text: 'Ingresar',
-                buttonColor: const Color(0xFFfefafa),
-                onPressed: () {},
-              )),
-          const SizedBox(height: 30),
-          SizedBox(
-              width: double.infinity,
-              height: 85,
-              child: CustomFilledButton(
-                icon: const Icon(Icons.login),
-                text: 'Ingresar',
-                buttonColor: const Color(0xFFfefafa),
-                onPressed: () {},
-              )),
-          const SizedBox(height: 30),
-          SizedBox(
-              width: double.infinity,
-              height: 85,
-              child: CustomFilledButton(
-                icon: const Icon(Icons.login),
-                text: 'Ingresar',
-                buttonColor: const Color(0xFFfefafa),
-                onPressed: () {},
-              )),
+          const _CustomButton(text: "hola", icon: Icon(Icons.home)),
           const Spacer(flex: 2),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -205,6 +115,41 @@ class _ButtonsHomeView extends StatelessWidget {
           ),
           const Spacer(flex: 1),
         ],
+      ),
+    );
+  }
+}
+
+class _CustomButton extends StatelessWidget {
+  final String text;
+  final Icon icon;
+
+  const _CustomButton({required this.text, required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 85,
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xFFfefafa),
+          borderRadius: BorderRadius.circular(10.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.7),
+              spreadRadius: 3,
+              blurRadius: 3,
+              offset: const Offset(2, 3),
+            ),
+          ],
+        ),
+        child: CustomFilledButton(
+          icon: icon,
+          text: text,
+          buttonColor: const Color(0xFFfefafa),
+          onPressed: () {},
+        ),
       ),
     );
   }
