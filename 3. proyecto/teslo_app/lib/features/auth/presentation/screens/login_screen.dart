@@ -38,7 +38,7 @@ class _buttonsView extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: const Column(
-        children: [Expanded(child: Placeholder(child: _ButtonsHomeView()))],
+        children: [Expanded(child: _ButtonsHomeView())],
       ),
     );
   }
@@ -57,7 +57,7 @@ class _AppBarView extends StatelessWidget {
       title: Center(
           child: Image(
         image: AssetImage(imageUrl),
-        height: 9,
+        height: 50,
       )),
       leading: IconButton(
         padding: const EdgeInsets.only(top: 7.0, bottom: 16.0),
@@ -91,7 +91,7 @@ class _ButtonsHomeView extends StatelessWidget {
       child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
-          const SizedBox(height: 60),
+          const SizedBox(height: 50),
           const _CustomButton(text: "hola", icon: Icon(Icons.home)),
           const SizedBox(height: 30),
           const _CustomButton(text: "hola", icon: Icon(Icons.home)),
