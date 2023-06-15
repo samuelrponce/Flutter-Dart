@@ -57,38 +57,3 @@ class CustomFilledButton extends StatelessWidget {
     );
   }
 }
-
-class CustomButton extends StatelessWidget {
-  final String text;
-  final Icon icon;
-
-  const CustomButton({super.key, required this.text, required this.icon});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 85,
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xFFfefafa),
-          borderRadius: BorderRadius.circular(10.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.7),
-              spreadRadius: 3,
-              blurRadius: 3,
-              offset: const Offset(2, 3),
-            ),
-          ],
-        ),
-        child: CustomFilledButton(
-          icon: icon,
-          text: text,
-          buttonColor: const Color(0xFFfefafa),
-          onPressed: () {},
-        ),
-      ),
-    );
-  }
-}
