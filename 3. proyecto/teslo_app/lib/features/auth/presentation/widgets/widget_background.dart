@@ -15,7 +15,7 @@ class CircularParticleScreen extends StatelessWidget {
           child: CircularParticle(
             awayRadius: 80,
             numberOfParticles: 150,
-            speedOfParticles: 0.1,
+            speedOfParticles: 1,
             height: screenHeight,
             width: screenWidth,
             onTapAnimation: true,

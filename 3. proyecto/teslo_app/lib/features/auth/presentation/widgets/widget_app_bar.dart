@@ -32,6 +32,7 @@ class AppBarView extends StatelessWidget {
           icon: const Icon(Icons.home),
           onPressed: () {},
         ),
+        const SizedBox(width: 5),
       ],
     );
   }
